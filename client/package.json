@@ -2,6 +2,7 @@
   "name": "misdaqia",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://ahmed2za.github.io/shaip",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
