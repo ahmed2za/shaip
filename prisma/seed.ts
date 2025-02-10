@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient, UserStatus } from '@prisma/client';
 import { hash } from 'bcryptjs';
 
 const prisma = new PrismaClient();
@@ -34,8 +34,9 @@ async function main() {
       create: {
         email: account.email,
         name: account.name,
+        role: account.role as string,
         password: hashedPassword,
-        role: account.role,
+        status: UserStatus.ACTIVE
       },
     });
   }
