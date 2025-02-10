@@ -1,0 +1,139 @@
+/* Button Styles */
+.btn {
+  @apply px-4 py-2 rounded-md font-medium transition-colors duration-200 text-sm;
+}
+
+.btn-primary {
+  @apply bg-primary-600 text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500;
+}
+
+.btn-secondary {
+  @apply bg-white text-gray-700 border border-gray-300 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500;
+}
+
+/* Form Input Styles */
+.form-input {
+  @apply block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm;
+}
+
+/* Card Styles */
+.card {
+  @apply bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200;
+}
+
+/* Rating Stars */
+.rating-stars {
+  @apply flex items-center;
+}
+
+.rating-star {
+  @apply h-5 w-5 flex-shrink-0;
+}
+
+.rating-star-filled {
+  @apply text-yellow-400;
+}
+
+.rating-star-empty {
+  @apply text-gray-300;
+}
+
+/* Avatar */
+.avatar {
+  @apply relative rounded-full overflow-hidden;
+}
+
+.avatar-sm {
+  @apply h-8 w-8;
+}
+
+.avatar-md {
+  @apply h-12 w-12;
+}
+
+.avatar-lg {
+  @apply h-16 w-16;
+}
+
+/* Badge */
+.badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.badge-primary {
+  @apply bg-primary-100 text-primary-800;
+}
+
+.badge-success {
+  @apply bg-green-100 text-green-800;
+}
+
+.badge-warning {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+/* Section Headers */
+.section-title {
+  @apply text-2xl font-bold text-gray-900 sm:text-3xl;
+}
+
+.section-subtitle {
+  @apply mt-2 text-lg text-gray-600;
+}
+
+/* List Styles */
+.list-item {
+  @apply py-4 flex items-center space-x-4 space-x-reverse;
+}
+
+.list-item-hover {
+  @apply hover:bg-gray-50 transition-colors duration-200;
+}
+
+/* Dividers */
+.divider {
+  @apply border-b border-gray-200;
+}
+
+.divider-light {
+  @apply border-b border-gray-100;
+}
+
+/* Text Styles */
+.text-truncate {
+  @apply overflow-hidden overflow-ellipsis whitespace-nowrap;
+}
+
+.text-truncate-2 {
+  @apply overflow-hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* Container Styles */
+.container-narrow {
+  @apply max-w-3xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.container-wide {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Grid Layouts */
+.grid-cards {
+  @apply grid gap-6 sm:grid-cols-2 lg:grid-cols-3;
+}
+
+.grid-list {
+  @apply grid gap-4;
+}
+
+/* Responsive Images */
+.img-cover {
+  @apply object-cover w-full h-full;
+}
+
+.img-contain {
+  @apply object-contain w-full h-full;
+}

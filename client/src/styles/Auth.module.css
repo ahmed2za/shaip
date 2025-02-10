@@ -1,0 +1,190 @@
+.container {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
+}
+
+.paper {
+  width: 100%;
+  max-width: 500px;
+  padding: 3rem 2rem;
+  border-radius: 16px !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  color: var(--gray-900);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input {
+  margin: 0.5rem 0 !important;
+}
+
+.input input {
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.forgotPassword {
+  color: var(--brand-primary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+.forgotPassword:hover {
+  color: var(--brand-primary-dark);
+  text-decoration: underline;
+}
+
+.submitButton {
+  margin: 1rem 0 !important;
+  padding: 0.75rem !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  font-size: 1rem !important;
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-dark) 100%) !important;
+  transition: transform 0.2s ease !important;
+}
+
+.submitButton:hover {
+  transform: translateY(-2px);
+}
+
+.dividerContainer {
+  margin: 2rem 0;
+  position: relative;
+}
+
+.divider {
+  color: var(--gray-500) !important;
+}
+
+.divider::before,
+.divider::after {
+  border-color: var(--gray-200) !important;
+}
+
+.socialButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.googleButton,
+.facebookButton {
+  padding: 0.75rem !important;
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.googleButton {
+  border-color: var(--gray-300) !important;
+  color: var(--gray-700) !important;
+}
+
+.googleButton:hover {
+  background-color: var(--gray-50) !important;
+  border-color: var(--gray-400) !important;
+}
+
+.facebookButton {
+  border-color: #1877f2 !important;
+  color: #1877f2 !important;
+}
+
+.facebookButton:hover {
+  background-color: rgba(24, 119, 242, 0.04) !important;
+}
+
+.footer {
+  text-align: center;
+  color: var(--gray-600);
+}
+
+.signupLink {
+  color: var(--brand-primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.signupLink:hover {
+  color: var(--brand-primary-dark);
+  text-decoration: underline;
+}
+
+/* Company Registration Form */
+.roleSelect {
+  margin: 2rem 0 !important;
+  padding: 1rem !important;
+  border: 2px solid var(--gray-200);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.roleSelect:hover {
+  border-color: var(--brand-primary);
+  background-color: var(--gray-50);
+}
+
+.roleSelectActive {
+  border-color: var(--brand-primary);
+  background-color: rgba(var(--brand-primary-rgb), 0.04);
+}
+
+.companyFields {
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 12px;
+  background-color: var(--gray-50);
+}
+
+.uploadButton {
+  width: 100%;
+  padding: 2rem !important;
+  border: 2px dashed var(--gray-300) !important;
+  border-radius: 12px !important;
+  background-color: var(--gray-50) !important;
+  transition: all 0.2s ease !important;
+}
+
+.uploadButton:hover {
+  border-color: var(--brand-primary) !important;
+  background-color: rgba(var(--brand-primary-rgb), 0.04) !important;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .paper {
+    padding: 2rem 1.5rem;
+  }
+
+  .socialButtons {
+    flex-direction: column;
+  }
+}

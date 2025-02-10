@@ -1,0 +1,85 @@
+{
+  "navigation": {
+    "dashboard": "لوحة التحكم",
+    "users": "المستخدمين",
+    "companies": "الشركات",
+    "blog": "المدونة",
+    "pages": "الصفحات",
+    "settings": "الإعدادات"
+  },
+  "actions": {
+    "create": "إنشاء",
+    "edit": "تعديل",
+    "delete": "حذف",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "confirm": "تأكيد",
+    "back": "رجوع"
+  },
+  "forms": {
+    "required": "هذا الحقل مطلوب",
+    "invalid_email": "البريد الإلكتروني غير صحيح",
+    "min_length": "يجب أن يكون طول النص على الأقل {{count}} حروف",
+    "max_length": "يجب أن لا يتجاوز طول النص {{count}} حروف"
+  },
+  "messages": {
+    "success": "تمت العملية بنجاح",
+    "error": "حدث خطأ أثناء تنفيذ العملية",
+    "confirm_delete": "هل أنت متأكد من الحذف؟",
+    "loading": "جاري التحميل..."
+  },
+  "auth": {
+    "login": "تسجيل الدخول",
+    "logout": "تسجيل الخروج",
+    "register": "تسجيل جديد",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "remember_me": "تذكرني",
+    "forgot_password": "نسيت كلمة المرور؟"
+  },
+  "dashboard": {
+    "welcome": "مرحباً بك في لوحة التحكم",
+    "total_users": "إجمالي المستخدمين",
+    "total_companies": "إجمالي الشركات",
+    "recent_activities": "آخر النشاطات",
+    "quick_actions": "إجراءات سريعة"
+  },
+  "users": {
+    "title": "إدارة المستخدمين",
+    "new_user": "مستخدم جديد",
+    "edit_user": "تعديل المستخدم",
+    "name": "الاسم",
+    "email": "البريد الإلكتروني",
+    "role": "الدور",
+    "status": "الحالة",
+    "joined_date": "تاريخ الانضمام"
+  },
+  "companies": {
+    "title": "إدارة الشركات",
+    "new_company": "شركة جديدة",
+    "edit_company": "تعديل الشركة",
+    "name": "اسم الشركة",
+    "owner": "المالك",
+    "subscription": "الاشتراك",
+    "status": "الحالة"
+  },
+  "blog": {
+    "title": "إدارة المدونة",
+    "new_post": "مقال جديد",
+    "edit_post": "تعديل المقال",
+    "post_title": "عنوان المقال",
+    "content": "المحتوى",
+    "meta_description": "وصف ميتا",
+    "publish_date": "تاريخ النشر"
+  },
+  "pages": {
+    "title": "إدارة الصفحات",
+    "new_page": "صفحة جديدة",
+    "edit_page": "تعديل الصفحة",
+    "page_title": "عنوان الصفحة",
+    "slug": "الرابط",
+    "content": "المحتوى",
+    "meta_description": "وصف ميتا",
+    "last_modified": "آخر تعديل"
+  }
+}

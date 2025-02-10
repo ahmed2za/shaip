@@ -1,0 +1,17 @@
+[SERVER] 
+> review-platform-server@1.0.0 dev
+> nodemon --inspect=0.0.0.0:9229 src/index.js
+
+
+[SERVER] [33m[nodemon] 3.1.9[39m
+
+[SERVER] [33m[nodemon] to restart at any time, enter `rs`[39m
+
+[SERVER] [33m[nodemon] watching path(s): *.*[39m
+
+[SERVER] [33m[nodemon] watching extensions: js,mjs,cjs,json[39m
+
+[SERVER] [32m[nodemon] starting `node --inspect=0.0.0.0:9229 src/index.js`[39m
+
+[SERVER] [31m[nodemon] app crashed - waiting for file changes before starting...[39m
+

@@ -1,0 +1,13 @@
+{
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "outputDirectory": ".next",
+  "env": {
+    "MONGODB_URI": "WILL_BE_SET_IN_VERCEL_DASHBOARD",
+    "DATABASE_URL": "WILL_BE_SET_IN_VERCEL_DASHBOARD",
+    "NEXTAUTH_URL": "WILL_BE_SET_IN_VERCEL_DASHBOARD",
+    "NEXTAUTH_SECRET": "WILL_BE_SET_IN_VERCEL_DASHBOARD"
+  }
+}

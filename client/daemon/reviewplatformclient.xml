@@ -1,0 +1,31 @@
+<service>
+	<id>reviewplatformclient.exe</id>
+	<name>ReviewPlatformClient</name>
+	<description>The client service for the Review Platform</description>
+	<executable>C:\Program Files\nodejs\node.exe</executable>
+	<argument>C:\Users\AhmeD\Desktop\pro ccc\node_modules\node-windows\lib\wrapper.js</argument>
+	<argument>--file</argument>
+	<argument>C:\Users\AhmeD\Desktop\pro ccc\client\start-client.js</argument>
+	<argument>--scriptoptions=</argument>
+	<argument>--log</argument>
+	<argument>ReviewPlatformClient wrapper</argument>
+	<argument>--grow</argument>
+	<argument>0.25</argument>
+	<argument>--wait</argument>
+	<argument>1</argument>
+	<argument>--maxrestarts</argument>
+	<argument>3</argument>
+	<argument>--abortonerror</argument>
+	<argument>n</argument>
+	<argument>--stopparentfirst</argument>
+	<argument>undefined</argument>
+	<logmode>rotate</logmode>
+	<stoptimeout>30sec</stoptimeout>
+	<env name="NODE_ENV" value="production"/>
+	<serviceaccount>
+		<domain>AHMED1</domain>
+		<user>LocalSystem</user>
+		<password></password>
+	</serviceaccount>
+	<workingdirectory>C:\Users\AhmeD\Desktop\pro ccc</workingdirectory>
+</service>

@@ -1,0 +1,281 @@
+.main {
+  min-height: 100vh;
+  direction: rtl;
+}
+
+/* Hero Section */
+.hero {
+  background-image: linear-gradient(rgba(37, 99, 235, 0.9), rgba(29, 78, 216, 0.9)), url('/images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 8rem 2rem;
+  text-align: center;
+  color: white;
+}
+
+.heroContent {
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.hero p {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.primaryButton,
+.secondaryButton {
+  padding: 0.75rem 2rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.primaryButton {
+  background-color: white;
+  color: rgb(37, 99, 235);
+}
+
+.primaryButton:hover {
+  background-color: rgb(243, 244, 246);
+  transform: translateY(-0.5rem);
+}
+
+.secondaryButton {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.secondaryButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-0.5rem);
+}
+
+/* Section Styles */
+.section {
+  padding: 4rem 2rem;
+}
+
+.section:nth-child(even) {
+  background-color: rgb(243, 244, 246);
+}
+
+.sectionHeader {
+  max-width: 64rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.sectionHeader h2 {
+  font-size: 1.5rem;
+  color: rgb(55, 65, 81);
+}
+
+.viewAll {
+  color: rgb(37, 99, 235);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.viewAll:hover {
+  text-decoration: underline;
+}
+
+/* Companies Grid */
+.companiesGrid {
+  max-width: 64rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+}
+
+.companyCard {
+  background-color: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+
+.companyCard:hover {
+  transform: translateY(-1.25rem);
+}
+
+.companyImage {
+  height: 16rem;
+  position: relative;
+}
+
+.companyInfo {
+  padding: 1.5rem;
+}
+
+.companyInfo h3 {
+  font-size: 1.125rem;
+  color: rgb(55, 65, 81);
+  margin-bottom: 0.5rem;
+}
+
+.category {
+  color: rgb(107, 114, 128);
+  margin-bottom: 1rem;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stars {
+  color: rgb(245, 158, 11);
+}
+
+.ratingNumber {
+  font-weight: 500;
+  color: rgb(55, 65, 81);
+}
+
+.reviewCount {
+  color: rgb(107, 114, 128);
+}
+
+/* Reviews Grid */
+.reviewsGrid {
+  max-width: 64rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+}
+
+.reviewCard {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.reviewHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.reviewHeader h3 {
+  font-size: 1.125rem;
+  color: rgb(55, 65, 81);
+}
+
+.reviewComment {
+  color: rgb(107, 114, 128);
+  margin-bottom: 1rem;
+  line-height: 1.75rem;
+}
+
+.reviewFooter {
+  display: flex;
+  justify-content: space-between;
+  color: rgb(107, 114, 128);
+  font-size: 0.875rem;
+}
+
+/* Features Section */
+.features {
+  text-align: center;
+}
+
+.features h2 {
+  margin-bottom: 3rem;
+}
+
+.featuresGrid {
+  max-width: 64rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+}
+
+.featureCard {
+  padding: 2rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.featureIcon {
+  font-size: 1.875rem;
+  margin-bottom: 1rem;
+}
+
+.featureCard h3 {
+  font-size: 1.125rem;
+  color: rgb(55, 65, 81);
+  margin-bottom: 0.5rem;
+}
+
+.featureCard p {
+  color: rgb(107, 114, 128);
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .hero {
+    padding: 6rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .heroButtons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section {
+    padding: 3rem 1rem;
+  }
+
+  .sectionHeader {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .companiesGrid,
+  .reviewsGrid,
+  .featuresGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .companiesGrid,
+  .reviewsGrid,
+  .featuresGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -1,0 +1,32 @@
+[CLIENT] 
+> client@0.1.0 dev
+> next dev
+
+
+[CLIENT]    ▲ Next.js 14.1.0
+
+[CLIENT]    - Local:        http://localhost:3000
+   - Environments: .env.local
+
+
+[CLIENT] Attention: Next.js now collects completely anonymous telemetry regarding usage.
+
+[CLIENT] This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+
+[CLIENT]  ✓ Ready in 3.1s
+
+[CLIENT]  ○ Compiling / ...
+
+[CLIENT]  ✓ Compiled / in 4.9s (297 modules)
+
+[CLIENT]  ✓ Compiled /_error in 209ms (299 modules)
+
+[CLIENT]  ✓ Compiled in 341ms (299 modules)
+
+[CLIENT]  ✓ Compiled in 320ms (293 modules)
+
+[CLIENT]  ✓ Compiled in 491ms (287 modules)
+

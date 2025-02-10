@@ -1,0 +1,224 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum UserStatus {
+  ACTIVE
+  BLOCKED
+}
+
+model User {
+  id            String     @id @default(cuid())
+  name          String?
+  email         String?    @unique
+  emailVerified DateTime?
+  image         String?
+  password      String?
+  role          String     @default("USER")
+  status        UserStatus @default(ACTIVE)
+  accounts      Account[]
+  sessions      Session[]
+  company       Company?  @relation(fields: [companyId], references: [id])
+  companyId     String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  // Activity tracking relations
+  activities    UserActivity[]
+  pageViews     PageView[]
+  userSessions  UserSession[]
+  apiRequests   ApiRequest[]
+
+  @@index([email])
+  @@index([role])
+}
+
+model Company {
+  id          String    @id @default(cuid())
+  name        String    @unique
+  description String
+  logo        String?
+  website     String?
+  address     String?
+  location    Json?
+  services    String[]
+  category    Category? @relation(fields: [categoryId], references: [id])
+  categoryId  String?
+  workingHours Json?
+  socialMedia  Json?
+  phoneNumber String?
+  email       String?
+  foundedYear Int?
+  featured    Boolean   @default(false)
+  rating      Float     @default(0)
+  reviews     Review[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Category {
+  id          String    @id @default(cuid())
+  name        String    @unique
+  description String?
+  companies   Company[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Review {
+  id              String    @id @default(cuid())
+  title           String
+  content         String
+  rating          Int
+  pros            String
+  cons            String
+  advice          String
+  helpfulCount    Int       @default(0)
+  liked           Boolean   @default(false)
+  companyResponse String?
+  responseDate    DateTime?
+  userId          String
+  companyId       String
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@index([userId])
+  @@index([companyId])
+}
+
+model Advertisement {
+  id          String    @id @default(cuid())
+  title       String
+  description String
+  imageUrl    String
+  link        String
+  position    String    // e.g., 'home_top', 'sidebar', 'company_page'
+  startDate   DateTime
+  endDate     DateTime
+  isActive    Boolean   @default(true)
+  clicks      Int       @default(0)
+  views       Int       @default(0)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+// Monitoring Models
+model SystemMetrics {
+  id                 String   @id @default(cuid())
+  timestamp          DateTime @default(now())
+  cpuUsage           Float
+  memoryTotal        BigInt
+  memoryUsed         BigInt
+  memoryFree         BigInt
+  uptime             BigInt
+  activeConnections  Int
+  requestsPerMinute  Int
+  averageResponseTime Float
+  errorRate          Float
+
+  @@index([timestamp])
+}
+
+model ErrorLog {
+  id        String   @id @default(cuid())
+  timestamp DateTime @default(now())
+  level     String
+  message   String
+  stack     String?
+  context   Json?
+
+  @@index([timestamp])
+  @@index([level])
+}
+
+model UserActivity {
+  id        String   @id @default(cuid())
+  userId    String
+  timestamp DateTime @default(now())
+  action    String
+  details   Json?
+  ip        String?
+  userAgent String?
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([timestamp])
+}
+
+model PageView {
+  id        String   @id @default(cuid())
+  userId    String?
+  timestamp DateTime @default(now())
+  path      String
+  referrer  String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@index([timestamp])
+}
+
+model UserSession {
+  id        String   @id @default(cuid())
+  userId    String
+  startTime DateTime @default(now())
+  endTime   DateTime?
+  duration  Int?
+  pages     String[]
+  bounced   Boolean  @default(true)
+  device    String?
+  browser   String?
+  os        String?
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([startTime])
+}
+
+model ApiRequest {
+  id        String   @id @default(cuid())
+  timestamp DateTime @default(now())
+  path      String
+  method    String
+  status    Int
+  duration  Int
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([timestamp])
+  @@index([userId])
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}

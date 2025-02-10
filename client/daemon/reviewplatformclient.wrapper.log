@@ -1,0 +1,10 @@
+1446-08-08 23:16:53 - Starting C:\Program Files\nodejs\node.exe  "C:\Users\AhmeD\Desktop\pro ccc\node_modules\node-windows\lib\wrapper.js" --file "C:\Users\AhmeD\Desktop\pro ccc\client\start-client.js" --scriptoptions= --log "ReviewPlatformClient wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+1446-08-08 23:16:53 - Started 5036
+1446-08-09 20:57:14 - Starting C:\Program Files\nodejs\node.exe  "C:\Users\AhmeD\Desktop\pro ccc\node_modules\node-windows\lib\wrapper.js" --file "C:\Users\AhmeD\Desktop\pro ccc\client\start-client.js" --scriptoptions= --log "ReviewPlatformClient wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+1446-08-09 20:57:14 - Started 10700
+1446-08-10 15:16:07 - Starting C:\Program Files\nodejs\node.exe  "C:\Users\AhmeD\Desktop\pro ccc\node_modules\node-windows\lib\wrapper.js" --file "C:\Users\AhmeD\Desktop\pro ccc\client\start-client.js" --scriptoptions= --log "ReviewPlatformClient wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+1446-08-10 15:16:07 - Started 10836
+1446-08-11 03:33:19 - Starting C:\Program Files\nodejs\node.exe  "C:\Users\AhmeD\Desktop\pro ccc\node_modules\node-windows\lib\wrapper.js" --file "C:\Users\AhmeD\Desktop\pro ccc\client\start-client.js" --scriptoptions= --log "ReviewPlatformClient wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+1446-08-11 03:33:19 - Started 11284
+1446-08-11 18:48:25 - Starting C:\Program Files\nodejs\node.exe  "C:\Users\AhmeD\Desktop\pro ccc\node_modules\node-windows\lib\wrapper.js" --file "C:\Users\AhmeD\Desktop\pro ccc\client\start-client.js" --scriptoptions= --log "ReviewPlatformClient wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+1446-08-11 18:48:25 - Started 10220
