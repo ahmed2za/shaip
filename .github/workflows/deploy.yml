@@ -31,9 +31,9 @@ jobs:
           cd client
           npm run build
         env:
-          NEXT_PUBLIC_SUPABASE_URL: 'https://uohjvwasdwenruhnvskn.supabase.co'
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVvaGp2d2FzZHdlbnJ1aG52c2tuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzkyMDk5MjYsImV4cCI6MjA1NDc4NTkyNn0.acqU4ZfSwIhnsWrr24YYWiZwmY41i8yjjGlzkn1gdmA'
-          NEXT_PUBLIC_API_URL: 'https://uohjvwasdwenruhnvskn.supabase.co'
+          NEXT_PUBLIC_SUPABASE_URL: "${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}"
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: "${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}"
+          NEXT_PUBLIC_API_URL: "${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}"
           NEXT_PUBLIC_BASE_PATH: '/shaip'
 
       - name: Deploy to GitHub Pages
