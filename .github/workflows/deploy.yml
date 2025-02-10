@@ -29,13 +29,15 @@ jobs:
         run: |
           cd client
           npm run build
+          npm run export
         env:
           NEXT_PUBLIC_SUPABASE_URL: 'https://uohjvwasdwenruhnvskn.supabase.co'
           NEXT_PUBLIC_SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVvaGp2d2FzZHdlbnJ1aG52c2tuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzkyMDk5MjYsImV4cCI6MjA1NDc4NTkyNn0.acqU4ZfSwIhnsWrr24YYWiZwmY41i8yjjGlzkn1gdmA'
-          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL || 'https://api.ahmed2za.github.io/shaip' }}
+          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+          NEXT_PUBLIC_BASE_PATH: '/shaip'
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: client/build
+          folder: client/out
           branch: gh-pages
