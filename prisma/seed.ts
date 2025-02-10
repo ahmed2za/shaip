@@ -1,22 +1,8 @@
 import { PrismaClient } from '@prisma/client';
-import * as bcrypt from 'bcrypt';
 
 const prisma = new PrismaClient();
 
 async function main() {
-  // Create admin user
-  const adminPassword = await bcrypt.hash('admin123', 10);
-  await prisma.user.upsert({
-    where: { email: 'admin@misdaqia.com' },
-    update: {},
-    create: {
-      email: 'admin@misdaqia.com',
-      name: 'Admin',
-      password: adminPassword,
-      role: 'ADMIN',
-    },
-  });
-
   // Create categories
   const categories = [
     {
