@@ -18,25 +18,24 @@ jobs:
           node-version: '18'
           cache: 'npm'
 
-      - name: Install and Build
+      - name: Install Dependencies
         run: |
           cd client
-          npm install
-          npm run build
+          npm ci
         env:
           NODE_ENV: production
-          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY || '' }}
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
-          NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
-          NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
-          GOOGLE_ID: ${{ secrets.GOOGLE_ID }}
-          GOOGLE_SECRET: ${{ secrets.GOOGLE_SECRET }}
-          FACEBOOK_ID: ${{ secrets.FACEBOOK_ID }}
-          FACEBOOK_SECRET: ${{ secrets.FACEBOOK_SECRET }}
+
+      - name: Build Client
+        run: |
+          cd client
+          npm run build
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: 'https://uohjvwasdwenruhnvskn.supabase.co'
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVvaGp2d2FzZHdlbnJ1aG52c2tuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzkyMDk5MjYsImV4cCI6MjA1NDc4NTkyNn0.acqU4ZfSwIhnsWrr24YYWiZwmY41i8yjjGlzkn1gdmA'
+          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL || 'https://api.ahmed2za.github.io/shaip' }}
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
+          folder: client/build
           branch: gh-pages
-          folder: client/out
