@@ -654,4 +654,89 @@ CNAME www   @
 MX    @     your-mail-server
 ```
 
-</div>
+## نشر المشروع على GitHub Pages
+
+لنشر المشروع على GitHub Pages، اتبع الخطوات التالية:
+
+### 1. إعداد GitHub Pages
+
+1. اذهب إلى صفحة إعدادات المشروع على GitHub:
+   - https://github.com/ahmed2za/shaip/settings/pages
+
+2. في قسم "Source"، اختر:
+   - Branch: `main`
+   - Folder: `/client/build`
+
+3. انقر على "Save"
+
+### 2. إعداد ملف التكوين للنشر
+
+1. قم بإنشاء مجلد `.github/workflows` في مشروعك (إذا لم يكن موجوداً)
+2. أنشئ ملف `deploy.yml` داخل المجلد `.github/workflows` بالمحتوى التالي:
+
+```yaml
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install and Build
+        run: |
+          cd client
+          npm install
+          npm run build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.5
+        with:
+          branch: gh-pages
+          folder: client/build
+```
+
+### 3. تحضير المشروع للنشر
+
+1. في ملف `package.json` في مجلد `client`، أضف:
+   ```json
+   {
+     "homepage": "https://ahmed2za.github.io/shaip"
+   }
+   ```
+
+2. قم بعمل build للمشروع محلياً للتأكد من أنه يعمل:
+   ```bash
+   cd client
+   npm install
+   npm run build
+   ```
+
+### 4. رفع التغييرات
+
+1. قم برفع التغييرات إلى GitHub:
+   ```bash
+   git add .
+   git commit -m "Setup GitHub Pages deployment"
+   git push origin main
+   ```
+
+### 5. مراقبة عملية النشر
+
+1. اذهب إلى تبويب "Actions" في مستودع GitHub الخاص بك
+2. راقب تقدم عملية النشر
+3. بمجرد اكتمال النشر، يمكنك زيارة موقعك على:
+   - https://ahmed2za.github.io/shaip
+
+### ملاحظات هامة
+
+- تأكد من أن جميع الروابط في تطبيقك نسبية وليست مطلقة
+- إذا كنت تستخدم React Router، قم بتكوينه ليعمل مع GitHub Pages
+- تأكد من أن جميع الصور والموارد تستخدم مسارات نسبية
+- قد يستغرق ظهور موقعك بضع دقائق بعد اكتمال عملية النشر

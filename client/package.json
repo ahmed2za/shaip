@@ -2,9 +2,11 @@
   "name": "misdaqia",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://ahmed2za.github.io/shaip",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next export",
     "start": "next start",
     "lint": "next lint",
     "prisma:generate": "prisma generate",

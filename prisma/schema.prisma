@@ -23,10 +23,11 @@ model User {
   status        UserStatus @default(ACTIVE)
   accounts      Account[]
   sessions      Session[]
-  company       Company?  @relation(fields: [companyId], references: [id])
+  company       Company?   @relation("UserCompany", fields: [companyId], references: [id])
   companyId     String?
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
+  reviews       Review[]
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
 
   // Activity tracking relations
   activities    UserActivity[]
@@ -49,6 +50,7 @@ model Company {
   services    String[]
   category    Category? @relation(fields: [categoryId], references: [id])
   categoryId  String?
+  users       User[]    @relation("UserCompany")
   workingHours Json?
   socialMedia  Json?
   phoneNumber String?
@@ -84,6 +86,8 @@ model Review {
   responseDate    DateTime?
   userId          String
   companyId       String
+  user            User      @relation(fields: [userId], references: [id])
+  company         Company   @relation(fields: [companyId], references: [id])
   createdAt       DateTime  @default(now())
   updatedAt       DateTime  @updatedAt
 

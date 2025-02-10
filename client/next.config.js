@@ -2,16 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  async redirects() {
-    return [
-      {
-        source: '/home',
-        destination: '/',
-        permanent: true,
-      },
-    ]
-  },
+  output: 'export',
+  basePath: '/shaip',
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'http',
